@@ -1,0 +1,58 @@
+#To Learn:
+php Date & Time
+php include & require
+php cookies
+php sessions
+
+
+#Learned:
+
+
+#Learn Much Much Later:
+Superglobals
+
+
+
+
+empty()
+isset()
+basename()
+strlower()
+pathinfo()
+isdir()
+mkdir()
+fileexists()
+in_array()
+move_upload_file()
+htmlspecialchars()
+nl2br()
+
+
+
+
+
+
+# validation:
+~Remove required from html,
+~When user submits any empty input box, in forms, it will show error.
+~Write php error conditions (validating)
+
+#file upload:
+~HTML code to take file upload
+~The file should be stored in ./upload foalder. (the folder is manually created in that directory)
+~Limit file size
+~Limit file types
+file related conditions
+show a message "Upload Successful" after uploaded.
+
+
+~Update the form.
+1. Remove required from html inputs.
+2. Add php form required, which will show error message like (Name, Email, Gender is required.)
+
+~Update the form.
+1. Add file upload option.
+2. Add php file upload script.
+	*Check if File Already Exists
+	*Limit File Size
+	*Limit File Type

@@ -73,7 +73,7 @@
 
 
 
-//Removing Array Items:
+### Removing Array Items:
 
 
 

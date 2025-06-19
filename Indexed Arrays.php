@@ -41,9 +41,11 @@
 
 
 
-//Removing Array Items:
+### Removing Array Items:
 
-
+$array01 = ["red", "green", "blue"];   
+array_pop($array01);                 //Removes the last item of an array. (indexed array only)
+print_r($array01);
 
 
 
