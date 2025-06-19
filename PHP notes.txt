@@ -1,0 +1,56 @@
+7. php constants:
+
+A constant is a name for a fixed value that cannot be changed after it's defined.
+Unlike variables, constants do not start with $.
+Constants are global and accessible anywhere in the script.
+
+
+# Create php constants:
+
+`One way is to create a constant, use the define() function.
+
+Syntax:      define(name, value);
+
+name: Specifies the name of the constant
+value: Specifies the value of the constant
+
+`Declare and print constant:
+
+define("demo_var_01", "Welcome to my site!");
+echo demo_var_01;
+
+
+`Another way to create a constant by using the const keyword.
+
+const MYCAR = "Volvo";
+echo MYCAR;
+
+
+
+8. php magic constants: 
+
+Special constants with double underscores (__) before and after the name.
+Their values change depending on where they are used.
+
+
+| Constant        | Description                     |
+| --------------- | ------------------------------- |
+| `__LINE__`      | Current line number in the file |
+| `__FILE__`      | Full path and filename          |
+| `__DIR__`       | Directory of the file           |
+| `__FUNCTION__`  | Name of the current function    |
+| `__CLASS__`     | Name of the current class       |
+| `__METHOD__`    | Name of the class method        |
+| `__NAMESPACE__` | Name of the current namespace   |
+
+Ex:
+
+<?php
+echo __LINE__;     // Outputs current line number
+echo __FILE__;     // Full path of this file
+?>
+
+
+
+
+
