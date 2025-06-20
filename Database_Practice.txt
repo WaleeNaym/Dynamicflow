@@ -1,0 +1,5 @@
+Check old EUB University course Text file on Database.
+
+select
+insert
+delete
