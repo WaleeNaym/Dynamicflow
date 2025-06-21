@@ -3,3 +3,190 @@ Check old EUB University course Text file on Database.
 select
 insert
 delete
+
+
+
+
+############################################################################################################################################################################################################################################
+
+Keywords : Create, insert into, values, select, where, select distinct, (AND, OR and NOT Operators), MIN(), MAX(), AVG(), Count(), AS, Order by, Between, Count,
+
+#SQL keywords are NOT case sensitive
+
+11-9-22:
+
+Database Name : Naym
+
+CREATE TABLE Student(
+    ID int(10),
+    Name varchar(10),
+    Address varchar(15),
+    Phone varchar(11),
+    Dept varchar(10),
+    Section varchar(10)
+);
+
+
+INSERT INTO student (ID, Name, Address, Phone, Dept, Section) VALUES (210221002, 'ASM Naym', 'Mirpur-1', 01559025060, 'CSE', 'A');
+
+Select * from student                     // * means all data
+
+Select * from student where ID = 210221002            // shows only specific data
+
+Select * from student where Address = 'Mirpur-1'           // shows only specific data
+
+Select Name from student where ID = 210221002            // shows name column not full table
+
+Select Name, Phone from student where ID = 210221002            // shows name and phone column
+
+
+
+18-9-22:
+
+select distinct Section from student                //Shows unique attributes from Section table (Section a,b,d etc. a will not repeat twice)
+
+# WHERE can be used with AND, OR, Not operators to filter out results based on multiple conditions.
+
+#AND Syntax:    (All conditions are True)
+select * from student
+where section = 'A' and Dept = 'CSE';                //It can have multiple conditions.
+
+#OR Syntax:     (Any condition or conditions are True)
+select * from student 
+where section = 'B' or Dept = 'CSE';                  
+
+#NOT Syntax:    (Nothing is True)
+select * from student 
+where not dept = 'cse';                 //Shows all queries (other than) which dont belong to 'CSE' department. (excludes all cse values)
+
+
+
+25-09-22:
+New table  employee = (id, name, address, salary, phone, join-date, dept)
+
+INSERT INTO employee (ID, Name, Address, Salary, Phone, Join_Date, Dept) VALUES 
+(12, 'Rifat', 'Mirpur-14', '12000', 01613442156, '20-09-2022', 'Management');
+
+INSERT INTO employee (ID, Name, Address, Salary, Phone, Join_Date, Dept) VALUES 
+(15, 'Rokon', 'Jafflong', '14000', 01213449996, '18-09-2022', 'Outdoor');
+
+# Max() :
+select Max(Salary) from employee                   //Shows maximum value from column
+# Min() :
+select Min(Salary) from employee
+# Avg() :
+select AVG(Salary) from employee
+
+# Find name of person with highest salary :
+select name from employee where Salary = (SELECT MAX(Salary) from employee)     
+
+# Find id and name both of person with highest salary :
+select ID, name from employee where Salary = (SELECT MAX(Salary) from employee)             
+
+# Find Phone number of lowest paid person:
+select Phone from employee where Salary = (SELECT MIN(Salary) FROM employee)  
+
+# Show all ID and Name of employees whose salary is greater than average salaries.
+select ID, name from employee where Salary > (SELECT AVG(Salary) from employee)
+
+# How many employees earn more than the average salary,   Count() keyword:
+select COUNT(ID) from employee where Salary > (SELECT AVG(Salary) from employee)
+
+# AS keyword:
+select COUNT(ID) AS Number_of_person from employee where Salary > (SELECT AVG(Salary) from employee)             // Renames column title
+
+# Order by (Employee Table)
+SELECT * FROM employee order by Name                //Show queries by ascending order
+SELECT * FROM employee order by Name Desc           //Show queries by descending order
+
+# Between  
+select * from employee WHERE salary between 10000 and 50000       //Select queries with given range. Begin and end values ar needed.
+
+# Count
+select COUNT(Dept) from employee where dept = 'admin'        //Show number of rows present in all or specified given column
+
+
+
+
+##################################################### FINAL ###############################################################
+
+
+Keywords : primary key, references, innerjoin, 
+
+13/11:
+Consider the following entities and answer the following questions:
+customer(cid, cname, address, phone)
+orders(oid, oname, oamount, oprice, cid)
+
+1. Find customer name by specific order:
+
+  SELECT customer.cname
+  FROM customer CROSS JOIN Orders
+  WHERE customer.cid = orders.cid and oid = 113
+
+2. Find orders placed from dhaka. 
+
+  SELECT *
+  FROM orders CROSS JOIN customer
+  WHERE orders.cid = customer.cid and address = "dhaka"
+
+3. Find all products a customer id ordered.                ~~~~~~~~~~~~~~~~~~~~
+
+  SELECT orders.oname
+  FROM orders CROSS JOIN customer
+  WHERE orders.cid = customer.cid and cname = "durjoy"
+
+
+4. Find phone numbers who ordered computer and laptop.     ~~~~~~~~~~~~~~~~~~~~~~
+ 
+   SELECT customer.phone
+   From customer INNER JOIN orders 
+   where customer.cid = orders.cid and oname = "laptop"
+                      or
+   SELECT customer.phone
+   FROM customer CROSS JOIN Orders
+   WHERE customer.cid = orders.cid and oname = "laptop"
+
+5. Find customer names who placed orders.
+  
+  SELECT customer.cname
+  FROM customer CROSS JOIN Orders;
+
+6. Find customer names and phone who placed orders.
+  
+  SELECT customer.cname, customer.phone
+  FROM customer CROSS JOIN Orders;
+
+6. Find customer names who placed several order.
+
+  SELECT customer.cname
+  FROM customer CROSS JOIN Orders
+  WHERE customer.cid = orders.cid and oamount > 2
+
+7. Find customer names who placed orders worth between 1000 and 50000.
+
+  SELECT customer.cname
+  FROM customer CROSS JOIN Orders
+  WHERE customer.cid = orders.cid and oprice BETWEEN 1000 and 50000
+
+8. Find customer who paid highest.
+
+  SELECT customer.cname
+  FROM customer CROSS JOIN Orders
+  WHERE customer.cid = orders.cid and oprice = (SELECT MAX(oprice) from orders)      // MIN() for lowest
+
+9. Find ID, name of customers who paid more than average.
+
+  SELECT customer.cid, customer.cname
+  FROM customer CROSS JOIN Orders
+  WHERE customer.cid = orders.cid and oprice > (SELECT AVG(oprice) from orders)      //if lower ----> oprice < (SELECT AVG(oprice) from orders)
+
+10. Find count of total amount of orders.
+
+  SELECT SUM(oamount)
+  FROM orders
+
+11. Find count of total number of orders.
+
+  SELECT COUNT(oid)
+  FROM orders
