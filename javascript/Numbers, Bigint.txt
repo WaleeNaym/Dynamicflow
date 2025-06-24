@@ -1,0 +1,94 @@
+### Notes:
+
+Numbers in js represents whole numbers, decimal numbers & exponentials.
+JS numbers are always 64 bit. 
+Integers accurate up to 15 digits. 
+Decimals are not 100% accurate & shown maximum 17 points.
+
+JavaScript has only one type of number. Unlike many other languages, JavaScript does not define different types of numbers, like integers, short, long, floating-point etc.
+JavaScript numbers are always stored as double precision floating point numbers. (99 & 99.00 is same number type)
+
+
+
+
+### Coding: 
+
+1.
+
+const number1 = 3;
+const number2 = 3.433;
+const numberX = 3**5;
+const number3 = 3e5;      	// 3 * 10^5
+const number4 = 3e-5;     	// 3 * 10^-5
+console.log(number1,number2,numberX,number3,number4);
+
+
+2. A number type can also be +Infinity, -Infinity, and NaN (not a number).
+
+const number1 = 3/0;      	// Infinity
+const number2 = -3/0;     	// -Infinity
+const number3 = "abc"/3;  	 // NaN    
+console.log(number1,number2,number3);
+typeof number1, number2, number3;
+
+
+3. JS floating point calculation Issue:
+
+let x = 0.2 + 0.1;
+console.log(x);      //0.30000000000000004
+
+//To solve the problem above, it helps to multiply and divide:
+let y = (0.2 * 10 + 0.1 * 10) / 10;
+console.log(y);      //0.3
+
+
+4. Adding Numbers and Strings
+
+//If you add a number and a string using (+), the result will be a string concatenation.
+
+let x = 10;
+let y = "20";
+console.log(x+y);		//1020
+
+
+let x = 10;
+let y = 20;		
+console.log("The result is: " + x + y + z);		//The result is: 1020, Since string is used with number the output is a string
+
+
+let x = 10;
+let y = 20;
+let z = "30";
+let result = x + y + z;
+
+    /*
+    The JavaScript interpreter works from left to right.
+    First 10 + 20 is added because x and y are both numbers.
+    Then 30 + "30" is concatenated because z is a string.
+    */
+
+
+5. Numeric Strings:
+
+//JavaScript will try to convert strings to numbers in ALL numeric operations:
+
+let x = "100";
+let y = "10";
+console.log( x/y );         //This will work
+console.log( x*y );         //This will work
+console.log( x-y );         //This will work
+console.log( x+y );      //This will NOT work
+
+
+
+
+
+
+
+
+
+
+
+
+
+

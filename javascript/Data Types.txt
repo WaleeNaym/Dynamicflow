@@ -1,0 +1,59 @@
+### Notes:
+
+~Check Notion for further details.
+
+~Types:
+	typeof "John"                 // Returns "string"
+	typeof 3.14                   // Returns "number"
+	typeof NaN                    // Returns "number"
+	typeof false                  // Returns "boolean"
+	typeof [1,2,3,4]              // Returns "object"  not ARRAY
+	typeof {name:'John', age:34}  // Returns "object"
+	typeof new Date()             // Returns "object"
+	typeof function () {}         // Returns "function"
+	typeof val1                   // Returns "undefined" when val1 has no value
+	typeof null                   // Returns "object"
+	typeof 1n                     // Returns "bigint"
+        typeof Symbol()               // Returns "symbol"
+
+
+
+### Code:
+
+1. typeof: Operator to know the data type:
+
+let first_name = "Jon Wick";
+let age = 38;
+let male = true;
+
+console.log(typeof male );
+console.log(typeof first_name );
+console.log(typeof (age) );         // Can write within the 1st brackets too
+
+
+2. Boolean:
+
+// A JavaScript Boolean represents one of two values: true or false.
+
+// Everything that returns False:
+	1. 0
+	2. -0
+	3. x = ";    	 //empty string
+	4. undefined
+	5. null
+	6. NaN
+        7. comparison between two object types
+
+
+3. null & undefined types:
+
+// If a variable is declared but the value is not assigned, then the value of that variable will be undefined.
+
+	let name1;
+	console.log(name1);  // undefined
+
+
+// null is a special value that represents empty or unknown value.
+
+       let name2 = null;
+       console.log(name2); // null or empty

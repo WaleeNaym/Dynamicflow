@@ -1,0 +1,131 @@
+###  Notes:
+
+1. Var vs Let vs Const keywords for declaring variables:
+
+~ Var: is old way (es6), it's legacy & always should be avoided.  Let & Const are Modern Javascript.
+
+~ Let: variables value & data type can change later. It is also used for empty variables (Undefined, null).
+	let have block scope. let cannot be redeclared on SAME scope. let can be reassigned.
+
+~ Const: is used for constant values & fixed data types (Immutable variable). Const cant be used for Undefined or null data types.
+	 const have block scope. const cannot be redeclared, reassigned. 
+	 Using const with objects/arrays, you can't reassign them, but their contents can still change.
+
+***   It is best practice to always use const when you are sure that the value will naver change later on.  ***
+
+
+2. Variable Naming rules :
+
+Names can contain letters, digits, underscores, and dollar signs.
+Names can begin with a letter, $ and underscore but not NUMBER.
+Names are case sensitive. ( Ex: y and Y are different variables).
+Reserved words cannot be used as names.
+
+
+3. Some Naming Conventions:
+
+~~~ https://www.syncfusion.com/blogs/post/top-javascript-naming-convention
+
+Using Camel Case way =  let firstNamePerson      // This is common in javascript world
+
+Using Underscore way =  let first_name_person
+
+Using Uppercase in 1st letter is legal bur not recommended since this way is exclusively used in OOP.  Ex:  let Person = "Jonas"
+
+Using All Uppercase to state that the variable is a constant. Ex:   let PI_VALUE = 3.14159                                          // Standard Practice
+
+
+
+
+### Coding:
+
+1. Declaring Variables :
+
+let p;          	  // Variable declared but undefined
+console.log(p)
+
+let x;     
+x = 5;
+
+let x = 5;
+let y = 6;
+
+let x=5, y=6, z="ok";    	// can declare multi variables at the same line
+console.log(x, y, z)
+
+let _ = "POOP", $ = 32;   	// $ & Underscore are valid JS identifiers
+console.log(_ , $);
+
+
+console.log(z = "Hello World!");       // Variables can be declared in conole output
+console.log(z);
+
+
+
+2. Changing values of variables:
+
+let x=5, y=6, z="ok";
+
+x="yes!", y=true, z=99.9;         //JS is loosely typed, data types & values can be updated along
+console.log(x, y, z)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

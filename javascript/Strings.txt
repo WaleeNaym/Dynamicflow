@@ -1,0 +1,169 @@
+### Notes:
+
+A String is a sequence or array of characters. 
+They can be inside single quote, double quotes or backticks. 
+Each character of string can be accessed using index, each can be assigned to variables.
+
+
+
+
+### Code:
+
+1. String Declaration :
+
+let name1 = 'Walee';
+let name2 = "Naym";
+let greeting = `Whats's Up`;       	 //Backticks
+console.log(name1, name2, greeting);
+
+
+
+2. Quotes Inside Quotes:  (Combination of single, double qutes & backticks can be used)
+
+let var1 = " It's alright 'Johny' ";
+let var2 = ' It"s alright "Johny" & `Tommy` ';
+let var3 = ` It's alright "Johny" & 'Tommy' `; 
+
+
+
+3. String Template or Template Literals:
+
+// Template strings or literals use ` Backticks ` to define a string. 
+// They allow single & double quotes inside them. 
+// They allow multiline strings.
+// It is a way to create strings that allow for easy embedding of expressions or variables within them.
+
+
+let bool1 = true;
+let num1 = 38.5;
+let str_template01 = `Multiple values stored inside as string: ${num1}, ${bool1} `;
+console.log(typeof str_template01);
+
+
+
+4. String Interpolation:
+
+// The process of assigning variables and expressions inside the template literal is known as interpolation.
+
+let name1 = "Naym";
+let birth = 1999;
+let Str_Interpolation = ` My name is ${name1}, my birthdate is ${birth} `;
+
+console.log(Str_Interpolation);
+
+console.log(` My name is ${name1}, my birthdate is ${birth} `);
+
+
+
+5. Multi-line String:
+
+console.log(" This is line 1     \n\
+This is line 2 ");                       // Using single or double Quotes
+	
+console.log(` This is line 1
+this is line 2 `);                       // using BackTicks
+
+console.log( "This is line 1"  +
+'This is line 2' );                       // using + Operator
+
+console.log( "This is line 1"  /
+'This is line 2' );                       // using / Operator 
+
+
+
+7. String Concatenation using (+) operator:
+
+const firstName = "Walee"
+const lastName = "Naym"
+console.log(firstName + " " + lastName)
+
+
+
+8. length property:
+
+let text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+let length01 = text.length;			//To find the length of a string.
+
+console.log(length01);
+
+
+
+9. Escape characters: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

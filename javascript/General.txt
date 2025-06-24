@@ -1,0 +1,10 @@
+1. Comments:
+
+// This is a single line comment
+
+/* This is a Multi
+   line comment
+*/
+
+
+2. JS 
