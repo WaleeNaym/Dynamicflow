@@ -90,8 +90,15 @@ console.log(length01);
 
 9. Escape characters: 
 
+//Escape characters are not rendered by html & browsers, They are only for console.
 
+let text1 = "We are the \"Vikings\" from the north.";       //Insert Double Quote
 
+let text2 = 'It\'s alright.';                           //Insert Single quote
+
+let text3 = "The character \\ is called backslash.";     //Insert single Backlash
+
+let text4 = "ok \n ok"              			  //New line
 
 
 

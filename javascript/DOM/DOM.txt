@@ -1,0 +1,188 @@
+in JS context, DOM is a JavaScript Object{}, that represents the page you see in the browser and provides you with an API to Interact with it.
+Web browser constructs the DOM when it loads an HTML document, and structures all the elements in a tree like representation.
+JavaScript can access the DOM dynamically. Change the content, structure, style of a web page.
+
+
+# What JS can do with DOM:
+JavaScript can change all the HTML elements in the page
+JavaScript can change all the HTML attributes in the page
+JavaScript can change all the CSS styles in the page
+JavaScript can remove existing HTML elements and attributes
+JavaScript can add new HTML elements and attributes
+JavaScript can react to all existing HTML events in the page
+JavaScript can create new HTML events in the page
+
+
+# What is DOM:
+The DOM is a W3C (World Wide Web Consortium) standard. The W3C Document Object Model (DOM) is a platform and language-neutral interface that allows 
+programs and scripts to dynamically access and update the content, structure, and style of a document.
+
+The W3C DOM standard is separated into 3 different parts:
+
+Core DOM - standard model for all document types
+XML DOM - standard model for XML documents
+HTML DOM - standard model for HTML documents
+
+
+# What is the HTML DOM?
+The HTML DOM is a standard object model and programming interface for HTML. It defines:
+
+The HTML elements as objects
+The properties of all HTML elements
+The methods to access all HTML elements
+The events for all HTML elements
+
+
+# HTML DOM Methods :
+
+`HTML DOM methods are actions you can perform (on HTML Elements).
+`HTML DOM properties are values (of HTML Elements) that you can set or change.
+
+
+# The DOM Programming Interface: 
+
+The HTML DOM can be accessed with JavaScript (and with other programming languages).
+In the DOM, all HTML elements are defined as objects.
+The programming interface is the properties and methods of each object.
+A property is a value that you can get or set (like changing the content of an HTML element).
+A method is an action you can do (like add or deleting an HTML element).
+
+
+
+# HTML DOM Document :
+The HTML DOM document object is the owner of all other objects in your web page.
+The document object represents your web page.
+If you want to access any element in an HTML page, you always start with accessing the document object.
+
+Some examples of how you can use the document object to access and manipulate HTML:
+
+`Finding HTML Elements:
+
+document.getElementById(id)		Find an element by element id
+document.getElementsByTagName(name)	Find elements by tag name
+document.getElementsByClassName(name)	Find elements by class name
+
+
+`Changing HTML Elements: (using methods or properties)
+
+element.innerHTML =  new html content	Change the inner HTML of an element
+element.attribute = new value		Change the attribute valuew of an HTML element
+element.style.property = new style	Change the style of an HTML element
+
+element.setAttribute(attribute, value)	Change the attribute value of an HTML element  [This is a method, not property]
+
+
+`Adding and Deleting Element: (Mostly Methods)
+
+document.createElement(element)		Create an HTML element
+document.removeChild(element)		Remove an HTML element
+document.appendChild(element)		Add an HTML element
+document.replaceChild(new, old)		Replace an HTML element
+document.write(text)			Write into the HTML output stream
+
+
+`Adding Events Handlers: (Method)
+
+document.getElementById(id).onclick = function(){code}		Adding event handler code to an onclick event
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

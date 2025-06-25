@@ -1,0 +1,321 @@
+### Notes:
+
+1. It's a Data Structure in Javascript. Objects use named indexes.
+2. It is a Non-Primitive data type. All JavaScript values, except primitives, are objects.
+3. JavaScript object is a variable that can store multiple data in key-value pairs
+4. Each key-value pair has a colon ' : ' between them and is separated by a comma ' , ' 
+5. Each key-value pair is called a property
+6. In array order number is important, but In objects order number is not important, It's best for unstructured data
+
+7. dot notation or operator has Precedence Order (left to right)    Ex:  [  object.property.method  ]
+8. Inside objects, a METHOD is a custom function that belongs to an object
+9. A METHOD must be executed once, to access it's property outside of the object
+10. It is a common practice to declare objects with the const keyword.
+
+
+
+
+### Code:
+
+1. Object Creation : 
+
+const information = {            //This is called Object Literal Syntax
+    firstName: "Abu",             
+    lastName: "Naym",             
+    age: 2030 - 1999,
+    hobbies: [ "Driving", "Touring", "WorkOut" ],
+    customFunction: function (p1, p2){ return p1+p2; },
+    work: (s1, s2) => { return `${s1}am to ${s2}pm.` }        //arrow Function
+};
+
+console.log(information);            	//In browser console, the properties are ordered alphabatically (a to z)
+console.log(typeof information);
+
+const emptyObjectDemo = {};        	 //Empty object 
+
+
+//Object in a single line is not recomended
+
+const person = { name: "John", age: 20, birthPlace: "Dhaka" };
+
+
+//No need to use, "new object()" Constructor Syntax to create objects
+
+const person2 = new Object( {name2: "John", age: 20, birthPlace: "Dhaka"} );
+
+
+
+
+2. Access, Modify, Add Methods & Properties:
+
+// There are two ways to access Object properties: Dot & Bracket Notations
+
+Ex1: 
+const information = {            
+    firstName: "Abu",             
+    lastName: "Naym",             
+    age: 2030 - 1999,
+    job: "Junior Developer",
+    hobbies: [ "Driving", "Touring", "WorkOut" ]
+};
+
+console.log( information.lastName );        	 //Access properties via DOT Notation
+console.log( information["lastName"] );     	//Access properties via Bracket Notation, inside Quotes
+
+console.log( information["poop"] );        	//Returns Undefined (False) if property doesn't exist
+
+
+//Access array elements inside objects
+
+console.log( information.hobbies[0] );     
+console.log( information["hobbies"][0] ); 
+
+
+//Get array length inside objects
+
+console.log( information.hobbies.length );         	//Dot notation has precedence order (left to right)
+console.log( information["hobbies"].length);
+
+
+//Adding Methods & Properties to Objects
+
+information.location = "Dhaka, Bangladesh";
+information[ "height" ] = "175 CM";          		//The Key must be inside Quote
+console.log(information);
+
+
+//Updating existing properties
+
+information[ "lastName" ] = "Saddat";
+information.job = "Senior Developer";
+console.log(information);
+
+
+
+Ex2:  (Taking User Prompt: Access & verify if property is present in object)
+
+const information = {            
+    firstName: "Abu",             
+    lastName: "Naym",             
+    age: 2030 - 1999,
+};
+
+//String concatenating to access property is common
+
+const name_key = "Name";            
+console.log( information["first" + name_key] );     
+console.log( information["last" + name_key] );   
+
+
+//verify from user input if property is present in object
+
+const interested_in = prompt("What you want to Know? Choose between firstName, lastName & age:");
+console.log( information[interested_in] );           //Taking input & access property
+
+
+if ( information[interested_in] ){                //True If property exists in Object
+    console.log( information[interested_in] );
+} else {
+    console.log( "Wrong Request! Choose between firstName, lastName & age." );
+}
+
+
+
+
+3. Functions/Methods in Objects :  
+
+//Function expression & Arrow function works, standard function declaration won't work
+
+
+const information = {   
+    customFunction: function(){
+        console.log("Hello World!");
+        console.log("Hi There!");
+        return "Good Bye!";
+    },
+    customFunction2: function (p1, p2){ return p1+p2; },
+    work: (s1, s2) => { return `${s1}am to ${s2}pm.` }       	 //arrow Function
+};
+
+
+//Access Methods or custom fuctions inside objects:
+
+console.log( information.customFunction() );           		//Dot Notation        
+console.log( information.customFunction2(10, 25) );
+console.log( information.work(9, 5) );
+
+
+console.log( information["customFunction"]() );         	//Bracket Notation
+console.log( information["customFunction2"](10, 25) );
+console.log( information["work"](9, 5) );
+
+
+//Adding a new function to existing Object
+
+information.customFunction3 = function(x1, x2) {
+    return x1+x2;
+}
+console.log(information.customFunction3(5, 6));
+
+
+
+
+4. Object Mutability :
+
+const person = {
+  firstName:"John",
+  lastName:"Cena",
+  age:50, 
+  eyeColor:"blue"
+}
+
+//X is the reference to original object, X is not copy of person. x is THE person object itself 
+//They have same memory address.
+
+const x = person;       	
+
+x.firstName = "Walee";			//Any changes to x will also change person
+x.lastName = "Naym";
+
+console.log(person);       		 //Modifying x, obviously updates the original object
+console.log(x);
+
+
+
+5. Delete object properties :                (Delete Keyword)
+
+const information = {            
+    firstName: "Abu",             
+    lastName: "Naym",             
+    age: 2030 - 1998,
+    job: "Junior Developer",
+    hobbies: [ "Driving", "Touring", "WorkOut"]
+};
+
+delete information.lastName     //delete object properties only
+
+
+//Should not be used on index array element, leaves EMPTY item 
+
+delete information.hobbies[0]  
+
+const var1 = delete information.job     //Returns True for both "deleted or Not deleted"
+console.log(var1);
+
+console.log( information );
+
+
+
+
+6. This Keyword in objects: 
+
+
+# "this" is reference to the whole object & has access to everything inside same object.
+# So, any method can access other properties/methods inside object
+
+# "this" keyword doesn't work in Arrow functions.
+
+
+Ex1: 
+
+    const person = {
+        firstName: "Walee",             //this.firstName is it's property
+        lastName : "Naym",
+        id       : 5566,
+        fullName : function() {
+            return this.firstName + " " + this.lastName;
+        }
+    }
+    console.log(person.fullName());
+
+
+Ex2:                                     //"this" keyword behavior & some good practices
+	const information = {
+	    birthYear: 1999,
+	    thisDemo: function(){
+	        return this;           //Just showing what "this" has in it
+	    },
+	
+	    calcAge: function(parameter1){
+	        return 2030 - parameter1;
+	    },
+	
+	    calcAge2: function(){        
+	        return 2030 - information.birthYear;      //information.birthyear is bad practice since object name could be changed later
+	    },   
+	
+	    calcAge3: function(){
+	        return 2030 - this.birthYear;           //this.birthyear is equal to information.birthyear
+	    },                                          //Calculation is done everytime method is call
+	
+	    calcAge4: function(){
+	        this.age = 2030 - this.birthYear;        // New property age is created
+	        return this.age;                         //This is best practice, since calculation is done once & stored in property
+	    },  
+	
+	    calcAge5: function(){
+	        console.log(`My age is: ${this.age}`);       //this.age property can be accessed anywhere in the object
+	        const poop = this.age;                    //Accessing property from different method
+	        return poop;  
+	    }, 
+	    
+	    thisDemo2: function(){
+	        return this;            //Just showing what "this" has in it
+	    }
+	}
+
+	console.log( information.thisDemo() );
+	console.log( information.calcAge(1998) );     //It's best not to repeat, since birthyear value is present inside object
+	console.log( information.calcAge2() );
+	console.log( information.calcAge3() );
+	console.log( information.calcAge4() );
+	console.log( information.thisDemo2() );  
+	console.log( information.calcAge5() );
+
+
+
+Ex3:                                          Access Method Property Globally
+	const mark = {
+	    height: 1.69,
+	    weight: 78,
+	    calcBMI: function(){
+	        const num = 5;
+	        this.var2 =  this.weight / (this.height ** 2);    //New property BMI is created
+	        return this.var2; 
+	    }
+	}
+	
+	console.log( mark.var2 );      //Can't access var2 property
+	
+	//Method must be executed once to access property outside of object
+
+	mark.calcBMI();           
+	console.log( mark.var2 );
+	
+	console.log( mark.num );           //Can't access num variable without "this" keyword
+
+
+
+Ex4:         object property can't use "this", only works in Method Property
+
+	const information = {
+	    birthYear: 1998,
+	    property2: this.birthYear - 1964
+	}
+	console.log( information.birthYear );
+	console.log( information.property2 );      //this won't work
+
+
+Ex4:                      "this" doesn't work in Arrow functions
+
+	const obj1 = {
+	    age: 30,
+	    property1: () => {
+	        return this.age;
+	    },
+	    property2: function () {
+	        return this.age;
+	    }
+	}
+	console.log( obj1.property1() );     //Returns undefined
+	console.log( obj1.property2() );

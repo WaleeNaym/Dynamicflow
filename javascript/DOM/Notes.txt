@@ -1,0 +1,5 @@
+Pillars of DOM :
+`Selection of an Element
+`Changing HTML
+`Changing CSS
+`Event Listener

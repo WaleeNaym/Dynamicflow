@@ -20,8 +20,6 @@
 
 ### Code:
 
-1. typeof: Operator to know the data type:
-
 let first_name = "Jon Wick";
 let age = 38;
 let male = true;

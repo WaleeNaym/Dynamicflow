@@ -1,0 +1,402 @@
+### Notes:
+
+1. It's a Data Structure in Javascript. Array uses numbered indexes. 
+2. Arrays are non-primitive & always mutable, const cannot be reassigned. But the elements of that array can be changed or mutated.
+3. Global & Local/Block  scope rules applies to Arrays as well.
+4. A method is a type of function. They return a value depending on which method is used.
+5. Avoid Negative Indexes with javascript arrays. It behaves weirdly. 
+
+
+
+
+
+### Code:
+
+
+1. Declaring Arrays:
+
+
+Ex1:
+	let fruits = [ "banana", "pear", 365, "cherry"];    //It is called an Array Literal
+	
+	console.log(fruits);
+	console.log(typeof fruits);      	//Arrays are type of Objects
+	console.log(typeof fruits[2]);
+	
+Ex2:
+	let emptyArrayDemo = [];     	//Empty array declaration. Must use "let" keyword.
+	
+	emptyArrayDemo[0] = "item1";
+	emptyArrayDemo[1] = "item2";   	 //Provide elements later after declaration.
+	console.log(emptyArrayDemo);
+	
+Ex3:
+	//Spaces and line breaks are not important. A declaration can span multiple lines
+	const var3 = ["item1",
+	    "item2",
+	    "item3", "itemm4"
+	];   
+	console.log(var3);
+	
+Ex4:
+	//No need to use new Array(), it does the same thing.  It is called Array Constructor. 
+
+	let names = new Array("Abu", "Naym", 1999);    //The new keyword can sometimes produce unexpected results
+	console.log(names);      
+
+
+
+
+2. Accessing & Changing Array Elements using Indexes: 
+
+
+Ex1:
+	let fruits = [ "banana", "pear", 365, "cherry"];    
+	
+	console.log(fruits[0]);
+	console.log(fruits[2]);
+	console.log(fruits[-1]);    	// minus index returns UNDEFINED
+	
+
+	const var1 = fruits[3];   	//Assigning Array element to a Variable
+	console.log(var1);
+
+
+Ex2:
+	const fruits = [ "banana", "pear", 365, "cherry"];    
+	
+	fruits[0] = "PLUM";      	//Changing Array items
+	fruits[4] = "Guava";     	//Fourth index is created & element added to Array
+	console.log(fruits);   
+	
+
+	//Adding elements with high indexes can Create Undefined "holes" in an array:
+	fruits[7] = "JackFruit";          //5th & 6th indexes are empty items
+	console.log(fruits);
+
+
+
+3. Array length property: 
+
+
+Ex1:  
+	let fruits = [ "banana", "pear", 365, "cherry"];    
+	console.log(fruits.length);     
+	
+	//The length property is always one more than the highest array index
+	console.log(fruits[fruits.length - 1]);       //To get the last item of an Array           ************
+
+
+
+Ex2:     Increase and Decrease the Array Length:
+
+
+	//Useful if you want Fixed array length in the end, Or have not filled with elements yet.
+
+	let courses = ["HTML", "CSS", "Javascript", "React", "Node.js"];
+	
+	courses.length = 7;      	 // Increase the array length to 7
+	console.log(courses);
+	
+	courses.length = 2;    		 // Decrease the array length to 2
+	console.log(courses)
+
+
+
+
+4. Const Arrays: 
+
+
+# An array declared with const cannot be reassigned or redeclared in the same scope. But the elements of that Array can be changed. 
+
+Ex1:
+	let var1 = ["item1", "item2"];
+	var1 = ["change1", "change2"]
+	console.log(var1);
+	
+	const var2 = ["item1", "item2"]; 	 //Can't Re-assign const array whole, but change items inside
+	var2 = ["change1", "change2"]
+	console.log(var2);                	//Shows TypeError
+
+
+# Const Arrays must be initialized when they are declared: 
+
+Ex2:
+	let var3 = [];
+	var3 = ["item1", "item2"]
+	console.log(var3);
+	
+	const var4 = [];           	//Must be assigned a value. Can't be empty 
+	var4 = ["item1", "item2"]
+	console.log(var4);        	 //Shows TypeError
+	
+
+# For Legacy Purposes :    let & const Arrays have block/local scope, while var keyword has only global scope.
+
+
+
+5. Types of elements in Arrays:
+
+
+Ex1:
+	//Can put variables, objects, expressions, arrays as array items:
+	
+	const var1 = "Naym";
+	const arrayZ = ["item1", "item2"];
+	const array1 = [ var1, 25-10*2, true, false, arrayZ, arrayZ[0], arrayZ[1]];   
+	console.log(array1);
+	
+	console.log(typeof array1[1]);
+	console.log(typeof array1[2]);
+	console.log(typeof array1[4]);
+	console.log(typeof array1[5]);
+
+
+
+
+6. Multi-Dimensional or Nested Arrays :
+
+# It's best to flatten Multi-dimensional arrays than iterate them with loops.
+
+Ex1:
+	const fruit = ["banana", "cherry", "pear"];
+	const vegetable = ["potato", "pumpkin", "spinach"];
+	
+	const mixed_list = [ fruit, vegetable ];            //Multiple arrays assigned as a single nested array
+	
+	console.log(mixed_list);
+	console.log(mixed_list[1]); 
+		
+
+Ex2:
+	const arr1 = [ [1,2,3],         // arr1 is 3*3 matrix
+	               [4,5,6],
+	               [7,8,9] ];       //same as writing in sngle  line
+	console.log(arr1);
+	
+	console.log(arr1.length);              //Length of Main array
+	console.log(arr1[0].length);          //Length of 1st Sub Array
+	
+	//Accessing elements within Sub arrays
+
+	console.log(arr1[0][0]);   //1
+	console.log(arr1[1][2]);   //6
+	console.log(arr1[2][2]);   //9
+	
+
+Ex3:
+	const row1 = [ "1", "2", "3" ];
+	const row2 = [ "4", "5", "6" ];
+	const row3 = [ "7", "8", "9" ];
+	
+	const map = [ row1, row2, row3 ];         //Using Existing Arrays as Elements
+	
+	console.log(map[0][0]);   //1
+	console.log(map[1][2]);   //6
+ 	console.log(map[2][2]);   //9
+
+
+Ex4:
+	const my_arr = [ ["Apple","Orange"], [true, false], ["Mango", [true, [26, 27], 33] ] ];
+	    
+	console.log(my_arr[2][1][1][0]);        //Accessing Multi Level Sub Array
+	
+	my_arr[2][1][1][1] = "XXX";         //Add Elements to a Multi Level Sub Array
+	
+	console.log(my_arr[2][1]);
+
+
+
+
+
+### Array Methods :   add elements, remove elements, search elements, 
+
+
+1. push() :
+
+
+# The push() method adds single or multiple new elements to the end of the array.
+# It returns the length of the Updated array.
+
+Ex1:
+	const myArray = [ "item1", "item2" ];
+	console.log(myArray);
+	
+	myArray.push("POOP");    	 	//add to the last index position
+	
+	const var1 = myArray.push("Nooo");    	//It returns updated length of array
+	console.log(var1);
+	console.log(myArray);
+	
+Ex2:
+	const myArray = [ "item1", "item2" ];
+	console.log(myArray);
+	
+	myArray.push("POOP", 38, true);    	//Adds multiple elements at once
+	console.log(myArray);
+
+
+
+2. unshift() :
+
+
+# The unshift() method adds single or multiple new elements at the Begining of the array.
+# It returns the length of the Updated array.
+
+
+Ex1:
+	const myArray = [ "item1", "item2" ];
+	console.log(myArray);
+	
+	myArray.unshift("POOP");     		//add to the first index position
+	
+	const var1 = myArray.unshift("Nooo");    	//It returns updated length of array
+	console.log(var1);
+	console.log(myArray);
+	
+Ex2:
+	const myArray = [ "item1", "item2" ];
+	console.log(myArray);
+	
+	myArray.unshift("POOP", 38, true);    	//Adds multiple elements at once
+	console.log(myArray);
+
+
+
+3. pop() :
+
+
+# The pop() method removes the LAST element from an array.
+# It returns the Removed element. 
+# It returns "undefined" if the array is empty.
+
+
+Ex1:
+	const myArray2 = [ 10, 15, 18, 30, 55 ];
+	console.log(myArray2);
+	
+	myArray2.pop();    		//deletes from last position
+	myArray2.pop();
+	console.log(myArray2);
+	
+	const var2 = myArray2.pop();   	 //It returns the deleted element
+	console.log(var2);
+	console.log(myArray2);
+
+
+
+4. shift() :
+
+
+# The shift() method removes the FIRST element from an array.
+# It returns the Removed element. 
+# It returns "undefined" if the array is empty.
+
+
+Ex1:
+	const myArray2 = [ 10, 15, 18, 30, 55 ];
+	console.log(myArray2);
+	
+	myArray2.shift();    		//deletes from first position
+	myArray2.shift();
+	console.log(myArray2);
+	
+	const var2 = myArray2.shift();   	 //It returns the deleted element
+	console.log(var2);	
+	console.log(myArray2);
+
+
+
+5. indexof() :
+
+
+# The indexOf() method searches for element in array & returns index position of that element if found.
+# If there are multple elements of the same name, only 1st matched element index is taken.  (Multi Occurrence)
+# If element not found in array it returns  -1.
+
+# Syntax :          array.indexof( searchElement,  startingIndex )           starting Index is Optional.
+
+# For Negative Starting Index Parameter : The search Actually starts at given parameter from the end (not Indexes).  [ Total number of elements - given parameter ]
+
+
+Ex1:
+	const nameList = ["Saddat", "Abu", "Naym", "Abu"];   	  //"Abu" occurred twice
+	
+	//If parameter matches multiple elements, only 1st matched element position is taken
+
+	const var1 = nameList.indexOf("Abu");
+	console.log(var1);                   	 	//Returns index position of given parameter if matched
+	
+	console.log( nameList.indexOf("Abu", 2) );     	//Starts searching from given index parameter
+	
+	console.log( nameList.indexOf("Fahim") );      	//Returns -1 if parameter not found
+	
+	
+Ex2:
+	const nameList = [ 33, 34, 55, 32, 31, 38, 55, 37, 40, 48];   
+	
+	//Searches from 4th last element (not index) to the end (not begining)
+
+	console.log( nameList.indexOf(55, -4) );   	 //6, Found at 6th index position
+	console.log( nameList.indexOf(55, -3) );    	//-1, not found
+
+
+
+6. lastIndexof() :
+
+
+# The lastIndexOf() is the same as IndexOf() method but returns the last element of multi occurrence. 
+
+# Syntax :          array.lastindexof( searchElement,  startingIndex )           starting Index is Optional.
+
+# The starting index here, is used to start searching Backwards.
+
+
+Ex1:
+	const nameList = ["Abu", "Saddat", "Naym", "Abu"];     //"Abu" occurred twice
+	
+	const var1 = nameList.lastIndexOf("Abu");
+	console.log(var1);                   			//Returns index position of last occurrence for multiple elements of same name
+	
+	console.log( nameList.lastIndexOf("Abu", 2) );   	//Starts searching Backwards from given index
+	
+	console.log( nameList.lastIndexOf("Fahim") );    	 //Returns -1 if parameter not found
+	
+	
+Ex2:
+	const nameList = [ 33, 34, 55, 32, 31, 38, 55, 37, 40, 48];   
+	
+	//Searches from 4th last element (not index) to the Begining (not to End)
+
+	console.log( nameList.lastIndexOf(55, -4) );   	 //6, Found two 55's & took last one
+	console.log( nameList.lastIndexOf(55, -5) );   	 //2, Found single 55 at 2nd index
+
+
+
+
+7. includes() :
+
+
+# The includes() method checks if an element is present in an array (including NaN type).
+# It returns TRUE or FALSE.
+# It is Case sensitive. The search is done with Strict Equality.
+
+# Syntax:           array.includes( searchElement,  startingIndex )           starting Index is Optional.
+
+# For Negative Starting Index Parameter : The search Actually starts at given parameter from the end (not Indexes).  [ Total number of elements - given parameter ]
+
+
+Ex1:
+	const nameList = ["Abu", "Saddat", "Naym", "Abu", 10];
+	const var1 = nameList.includes("Abu");
+	console.log( var1 );                  			 //Returns TRUE if found
+	
+	console.log( nameList.includes("Fahim") );  		//Returns False if not found
+	
+	console.log( nameList.includes("Saddat", 2) );  	 //Starting Index Parameter for Searching
+	
+
+	//The search starts from Third Last Element (not Index) to the end (not begining)
+
+	console.log( nameList.includes("Naym", -3) );   
+        console.log( nameList.includes("Naym", -2) );
