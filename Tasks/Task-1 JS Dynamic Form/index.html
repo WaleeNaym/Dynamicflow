@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dynamic Form</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+
+</head>
+<body>
+
+  <div class="main-div">
+
+    <div class="left">
+
+      <label>Name:</label><br>
+      <input type="text" id="nameInput" oninput="showName01()"><br><br>
+
+      <label>Gender:</label><br>
+      <input type="radio" id="male" value="Male" name="ok" onchange="Gender01()"> Male<br>
+      <input type="radio" id="female" value="Female" name="ok" onchange="Gender01()"> Female<br>
+      <input type="radio" id="others" value="Others" name="ok" onchange="Gender01()"> Others<br><br>
+
+      <label>Department:</label><br>
+      <select id="deptSelect" onchange="viewDepartment01()">
+        <option value="">Please Select</option>
+        <option value="CSE">CSE</option>
+        <option value="EEE">EEE</option>
+        <option value="Economics">Economics</option>
+      </select>
+
+      <br><br>
+        <button onclick="resetForm01()">Reset</button>
+
+    </div>
+
+    <div class="right">
+
+      <p><strong>Name:</strong> <span id="nameOutput"></span> </p>
+      <p><strong>Gender:</strong> <span id="genderOutput"></span> </p>
+                                                                               <!-- Default this div is hidden -->
+      <div id="others-Input-Div" style="display:none;">                       
+        <label>Which Gender ?:</label>
+        <input type="text" id="otherGenderInput" oninput="OtherGender02()">
+        <p><strong>Other Gender:</strong> <span id="otherGenderOutput"></span> </p>
+      </div>
+
+      <p><strong>Department:</strong> <span id="deptOutput"></span></p>
+    
+    </div>
+  </div>
+
+
+</body>
+</html>

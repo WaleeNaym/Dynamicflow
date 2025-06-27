@@ -3,6 +3,13 @@ Web browser constructs the DOM when it loads an HTML document, and structures al
 JavaScript can access the DOM dynamically. Change the content, structure, style of a web page.
 
 
+Pillars of DOM :
+`Selection of an Element
+`Changing HTML
+`Changing CSS
+`Event Listener
+
+
 # What JS can do with DOM:
 JavaScript can change all the HTML elements in the page
 JavaScript can change all the HTML attributes in the page

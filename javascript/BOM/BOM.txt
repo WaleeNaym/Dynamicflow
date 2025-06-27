@@ -1,0 +1,178 @@
+The Browser Object Model (BOM) allows JavaScript to "talk to" the browser.
+
+
+
+### Javascript Window
+
+# The window object:
+
+~The window object represents the browser's window.
+~All global JavaScript objects, functions, and variables automatically become members of the window object.
+~Global variables are properties of the window object.
+~Global functions are methods of the window object.
+
+The browser window (the browser viewport) is NOT including toolbars and scrollbars.
+
+1. `window.innerHeight` = the inner height of the browser window in px
+2. `window.innerWidth` = the inner width of the browser window in px
+3. `window.open()` - open a new window
+4. `window.close()` - close the current window
+5. `window.moveTo()` - move the current window
+6. `window.resizeTo()` - resize the current window
+
+
+
+
+### Javascript Window Screen:
+
+The window.screen object contains information about the user's screen.
+
+The window.screen object can be written without the window prefix.
+
+Properties:
+
+screen.width
+screen.height
+screen.availWidth
+screen.availHeight
+screen.colorDepth
+screen.pixelDepth
+
+
+
+### JavaScript Window Location:
+
+The window.location object can be used to get the current page address (URL) and to redirect the browser to a new page.
+
+Some examples:
+
+window.location.href 	 	returns the href (URL) of the current page
+window.location.hostname 	returns the domain name of the web host
+window.location.pathname 	returns the path and filename of the current page
+window.location.protocol 	returns the web protocol used (http: or https:)
+window.location.assign() 	loads a new document
+
+
+
+
+### JavaScript Window History:
+
+The window.history object contains the browsers history.
+
+The window.history object can be written without the window prefix.
+
+To protect the privacy of the users, there are limitations to how JavaScript can access this object.
+
+Some methods:
+
+history.back() - same as clicking back in the browser, loads the previous URL in the history list.
+history.forward() - same as clicking forward in the browser, loads the next URL in the history list.
+
+
+
+
+### JavaScript Window Navigator:
+
+```````````````````````````````````` Study later
+
+
+
+
+
+
+### JavaScript Popup Boxes:
+
+JavaScript has three kind of popup boxes: Alert box, Confirm box, and Prompt box.
+
+Line Breaks:
+~To display line breaks inside a popup box, use a back-slash followed by the character n.
+
+# Alert Box
+
+An alert box is often used if you want to make sure information comes through to the user.
+When an alert box pops up, the user will have to click "OK" to proceed.
+alert() method can be written without the window prefix.
+
+Syntax:		window.alert("sometext");
+
+
+# Confirm Box
+
+A confirm box is often used if you want the user to verify or accept something.
+When a confirm box pops up, the user will have to click either "OK" or "Cancel" to proceed.
+If the user clicks "OK", the box returns true. If the user clicks "Cancel", the box returns false.
+confirm() method can be written without the window prefix.
+
+Syntax:		window.confirm("sometext");
+
+
+# Prompt Box
+
+A prompt box is often used if you want the user to input a value before entering a page.
+When a prompt box pops up, the user will have to click either "OK" or "Cancel" to proceed after entering an input value.
+If the user clicks "OK" the box returns the input value. If the user clicks "Cancel" the box returns null.
+prompt() method can be written without the window prefix.
+
+Syntax:		window.prompt("sometext","defaultText");
+
+
+
+
+
+
+### JavaScript Timing Events:
+
+
+The window object allows execution of code at specified time intervals.
+
+These time intervals are called timing events.
+
+The two key methods to use with JavaScript are:
+
+setTimeout(function, milliseconds)
+Executes a function, after waiting a specified number of milliseconds.
+
+setInterval(function, milliseconds)
+Same as setTimeout(), but repeats the execution of the function continuously.
+
+~The setTimeout() and setInterval() are both methods of the HTML DOM Window object.
+
+
+
+# The setTimeout() Method
+
+
+The first parameter is a function to be executed.
+The second parameter indicates the number of milliseconds before execution.
+setTimeout() method can be written without the window prefix.
+
+Syntax:		window.setTimeout(function, milliseconds);
+
+
+# The
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

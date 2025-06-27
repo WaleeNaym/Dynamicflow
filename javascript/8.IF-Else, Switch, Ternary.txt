@@ -1,0 +1,211 @@
+### Notes: 
+
+
+1. In if-else, They can be used in any of 3 combinations: 
+
+~if statement  only 
+~if...else statement  combo 
+~if...else if...else statement  combo 
+
+
+2. The switch statement evaluates a variable/expression and executes the corresponding body that matches the expression's result. 
+
+   When number of conditions are large it is better & faster to use SWITCH than if-else statement. 
+ 
+`The switch statement checks the value strictly. Auto type conversion is not done. 
+`If you DON'T to use a break, the multiple cases will continue to execute until break or end case. 
+`The default Keyword is optional. It specifies the code to run if there is no case match. 
+`If default is not the last case in the switch block, a break must be inserted. 
+
+ 
+
+
+### Code :
+
+
+1. Pseudocode If-Elseif-Else:
+
+if (condition1) {
+    //CODE
+} else if (condition2) {
+    //CODE                           
+} else if (condition3) {
+    //CODE                           
+} else {
+    //CODE                          
+}
+
+
+
+2. Nested If-Elseif-Else Pseudocode: 
+
+if (condition1) {
+    if (condition1_1) {
+        if (condition1_1_1) {
+            //CODE
+        }
+    } else if (condition1_2) {
+        //CODE                           
+    } else {
+        //CODE                          
+    }
+} else if (condition2) {
+    if (condition2_1) {
+        //CODE
+    }                           
+} else if (condition3) {
+    if (condition3_1) {
+        //CODE
+    } else {
+        //CODE  
+    }                                                          
+} else {
+    //CODE                          
+}
+
+
+
+3. Curly braces can be skipped for if-else statement, if each block contains only a "SINGLE" line to execute but NEVER recommended:
+
+let num = 5;
+
+if (num === 5) console.log("Will work");         //This will work
+
+
+if (num === 5) 
+console.log("Will work");                  //This will work
+else if (num === 4)
+console.log("Hell yes!");
+else 
+console.log("Good Bye!");
+
+
+if (num === 5)
+console.log("Will not work");         //This will not work, since this block has TWO lines to execute
+console.log("Will not work");
+else
+console.log("Will not work");
+
+
+
+4. Switch Statement:
+
+# The switch statement evaluates an variable/expression and executes the corresponding body that matches the expression's result.
+
+# When number of conditions are large it is better & faster to use SWITCH than if-else statement.
+
+Notes:
+	• The switch statement checks the value strictly. Auto type conversion is not done.
+	• If you DON'T to use a break, the multiple cases will continue to execute until break or end case.
+	• It is not necessary to break the last case in a switch block. The block breaks (ends) there anyway.
+	• The default Keyword is optional. It specifies the code to run if there is no case match.
+        • If "default" is not the last case in the switch block, a break must be inserted inside default. Normally you can skip.
+
+Pseudocode:
+
+	switch(variable/expression){
+	    case value1:
+	        // Body of case 1
+	        break;
+	    case value2:
+	        // Body of case 2
+	        break;
+	    case valueN:
+	        // Body of case N 
+	        break;
+	    default:
+	        // Body of default 
+    }
+
+
+Ex1:
+	let day = "sunday";
+	switch(day){
+	    case 'sunday':    //Same as day === "sunday"
+	        console.log("Sunday, Watch UFC MMA today!");
+	        console.log("Sunday, Workout also!");
+	        break;
+	    case 'monday':
+	        console.log("Monday, Sleep & Eat.");
+	        break;
+	    case 'thursday':
+	    case 'friday':       
+	    case 'saturday':    //this block is executed for all 3 cases
+	        console.log("In 3 days, Finish the course.");
+	        break;
+	    case 10:
+	        console.log("Number type 10 is also a acceptable case");
+	        break;
+	    case true:
+	        console.log("True/False Boolean is also a acceptable case");
+	        break;
+	    default:
+	        console.log("Not a valid day!");
+}
+
+
+
+5. Optimizing if-else & Switch:
+
+When optimizing if-else & Switch, the goal is always to minimize the number of conditions to evaluate before taking the correct path. The easiest optimization is  to ensure that the most common conditions are first.
+
+
+
+6. Conditional (Ternary) Operator:
+
+# A ternary operator can be used to replace an if..else statement in certain situations.
+
+# Syntax:                 condition ? True Expression : False Expression 
+
+# It can be used inside template literal, unlike if-else.
+
+
+Ex1:
+	let age = 21;
+	let message = age >= 18 ? "You are an Adult." : "You are a Minor";
+	console.log(message);
+
+
+	let age2 = 15;
+	console.log( `I like to drink ${age2 >= 18 ? "Wine.":"Water."}` );  //Used in template literal
+	
+
+Ex2:
+	let age = 19;
+	age >= 18 ? console.log("You can legally drink"):  //Works like if statement
+	console.log("You are Underage, drink water.");     //Works like else statement
+	
+
+	//similarly
+	let age2 = 16;
+	let drink = (age2 >= 18) ? "Wine..!" : 'Water..!'; 
+	console.log(drink);
+	
+
+	//Similarly translated in if-else
+	let age3=24, drink2;
+	if(age3 >= 18){
+	    drink2 = "Have a bottle of Wine";
+	}else{
+	    drink2 = "Water is all you will get";
+	}
+	console.log(drink2);
+	
+
+7. Nested Ternary Operators:
+
+Ex1:
+	let a = 2;
+	let result = (a>=0) ? (a===0 ? "Zero":"Positive") : "Negative";
+	console.log(result);
+	
+Ex2:
+	let marks = 56;
+	
+	let result = (marks<40) ? "Failed": 
+	(marks<=60) ? "Average" :
+	(marks<=80) ? "Good": "Excellent";
+	                                    //if, else if, else if, else
+	console.log(result);
+
+

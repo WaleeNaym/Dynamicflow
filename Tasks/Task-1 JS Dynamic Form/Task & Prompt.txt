@@ -1,0 +1,39 @@
+### Idea:
+
+1. 2 divs, 
+2. one side main features. 2nd side all the output.
+3. sections:
+	*Namefield, while typing, the characters will be shown to right side 
+	*Select gender, if others is selected a box will appear below to describe gender.
+	*Department Selection box, (CSE, EEE, Economics), chosen answer will be shown, to right side.
+
+onclick, onchange, other JS ways.
+
+
+### Prompt :
+
+Make me a dynamic form: 
+
+Instructions:
+have html, css, javascript files separate.  
+Use as simplified javascript code as possible.
+Use javascript onclick & onchange events. Use other events if required.
+Use bare minimum css if required.
+
+Features:
+~Overall there will be two sections left & right side. (No need for border)
+~The left side will have the form & right side will show dynamic output.
+~No need to have any submit button.
+
+1. leftside: Name input field. rightside: dynamically output whatever user types 
+2. leftside: Gender Checkbox. Checkbox options: Male, Female, Others.
+	*If only "Others" option is selected,
+	*An input box will appear on rightside (Don't add any button)
+3.Leftside: Department Selection. Selection options: CSE, EEE, Economics.
+	*Whichever selection is selected, Show it to the right side.
+
+Update:
+1. Add a reset button to the "left". 
+	*Clicking the button will show javascript confirm() box, With message "Are you sure to reset ?"
+	* If "ok" is clicked Everything will reset
+	* If "cancel" nothing will change

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Practice</title>
+</head>
+<body>
+    
+ <!-- ### Finding the HTML Elements by their Id & changing in DOM -->
+
+<!-- Syntax: document.getElementById(id).innerHTML = new HTML -->
+ 
+ <!-- <p>Example 1:</p>
+<p id="demo01">This is a paragraph.</p>
+<script>
+    document.getElementById("demo01").innerHTML = "New Updated Content (text)";  //innerHTML pushes/sets the new content inside selected element
+</script> -->
+
+<!-- <p>Example 2:</p>
+<h3 id="demo01">This is a paragraph.</h3>
+<script>
+    const var1 = document.getElementById("demo01");  //Storing it to a variable for ease of use multiple time
+    var1.innerHTML = "New Updated Content (text)";
+</script> -->
+
+
+
+<!-- ### Changing the Value of an Attribute: -->
+
+<!-- Syntax: document.getElementById(id).attribute = new value -->
+<!-- <p>Example 1:</p>
+<img id="myimage" src="./image1.png">
+<script>
+    document.getElementByID("myimage").src = "./landscape1.jpg"; //Changing the source image to different one
+</script> -->
+
+
+<!-- ### Dynamic HTML content: -->
+
+<!-- <script>
+    document.getElementById("demo01").innerHTML = "Date : " + Date();  //Inserted Date() function which will show current server time.
+</script> -->
+
+
+
+<!-- ### document.write() can directly output HTML, without .innerHTML property: -->
+
+<!-- <p>This is Default HMTL element output</p>
+<script>
+    document.write( Date() );   //Writing directly to the HTML output stream
+</script>
+<p>This is also Default HMTL element output</p> -->
+
+
+
+<!-- ### Finding HTML Elements by Tag Name: -->
+
+<!-- <div id="div01">
+    <p>This is paragraph 1.</p>
+    <p>This is paragraph 2.</p>
+    <p>This is paragraph 3.</p>
+</div>
+
+    <p id="demo02">This content will be changed</p>
+
+<script>
+    const var1 = document.getElementById("div01");  //This example finds the element with id="div01", and then finds all <p> elements inside "div01":
+    const var2 = var1.getElementsByTagName("p");
+    
+    //Getting the first <p> content, and insert in the <p> which is outside <div>
+    document.getElementById("demo02").innerHTML = "Captured & inserted here: " + var2[0].innerHTML;         //The three <p> are stored as array, and we get the 1st <p> by var2[0] indexing
+</script> -->
+
+
+
+<!-- ### Finding HTML Elements by Class Name: -->
+
+<!-- If you want to find all HTML elements with the same class name, use getElementsByClassName().
+This example returns a list of all elements with class="intro". 
+-->
+<!-- Example 1: -->
+<!-- <p class="intro">This is paragraph 1.</p>
+<p class="intro">This is paragraph 2.</p>
+<p class="intro">This is paragraph 3.</p>
+
+<p id="demo">This content will be changed</p>
+
+<script>
+    const var1 = document.getElementsByClassName("intro");
+
+    document.getElementById("demo").innerHTML = "Captured & inserted here: " + var1[1].innerHTML;
+</script> -->
+
+<!-- Example 2: Change only the 1st elemt with class="test" : -->
+<!-- <p class="test"></p>
+<p class="test"></p>
+
+<script>
+document.getElementsByClassName("test")[0].innerHTML
+ = "Hello";
+</script> -->
+
+
+
+<!-- ### Finding HTML Elements by CSS Selectors: -->
+
+<!-- If you want to find all HTML elements that match a specified CSS selector 
+(id, class names, types, attributes, values of attributes, etc), use the querySelectorAll() method.
+This example returns a list of all <p> elements with class="intro". 
+-->
+<!-- <p class="intro">This is paragraph 1.</p>
+<p class="intro">This is paragraph 2.</p>
+<p class="intro">This is paragraph 3.</p>
+
+<p id="demo">This content will be changed</p>
+
+<script>
+    const var1 = document.querySelectorAll("p.intro");
+
+    document.getElementById("demo").innerHTML = "Captured & inserted here: " + var1[1].innerHTML;
+</script> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

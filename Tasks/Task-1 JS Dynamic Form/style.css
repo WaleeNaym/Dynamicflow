@@ -1,0 +1,10 @@
+body {
+  padding: 90px;
+  font-size: 20px;
+}
+
+.main-div {
+  display: flex;
+  gap: 80px;
+}
+
