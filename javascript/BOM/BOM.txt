@@ -149,11 +149,22 @@ setTimeout() method can be written without the window prefix.
 Syntax:		window.setTimeout(function, milliseconds);
 
 
-# The
+## The clearTimeout() Method
+
+The clearTimeout() method stops the execution of the function specified in setTimeout().
+
+clearTimeout() method can be written without the window prefix.
+
+Syntax:		window.clearTimeout(timeoutVariable)
+
+`Example:
+myVar = setTimeout(function, milliseconds);
+clearTimeout(myVar);
+
+The clearTimeout() method uses the variable returned from setTimeout()
 
 
-
-
+# Practice The setInterval() Method, clearInterval(), Later.....
 
 
 
