@@ -1,0 +1,21 @@
+### Notes: 
+
+
+# Variable Naming rules:
+
+`Starts with the $ sign, followed by the name of the variable.
+`Variable name must start with a letter or the underscore character.
+`Variable name cannot start with a number.
+`Can contain alpha-numeric characters and underscores (A-z, 0-9, and _ ). No special characters.
+`Variable names are case sensitive. ($age and $Age are two different variables).
+
+
+Unlike other programming languages, PHP has no command for declaring a variable (Var, Let). It is created the moment you first assign a value to it.
+
+php is a loosely typed language. We don’t have to declare data type when assigning variables. PHP defines the variable's type based on the value assigned to it. 
+However in php 7, type declaration was added.
+
+
+
+
+### Code:

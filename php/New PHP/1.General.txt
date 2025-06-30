@@ -1,0 +1,37 @@
+# What is a PHP File?
+`PHP files can contain text, HTML, CSS, JavaScript, and PHP code
+`PHP code is executed on the server, and the result is returned to the browser as plain HTML.
+
+
+# What Can PHP Do?
+PHP output is not limited to HTML. It can output images or PDF files, or text data such as XHTML and XML.
+`PHP can generate dynamic page content
+`PHP can create, open, read, write, delete, and close files on the server
+`PHP can collect form data
+`PHP can send and receive cookies
+`PHP can add, delete, modify data in your database
+`PHP can be used to control user-access
+`PHP can encrypt data
+
+
+
+# PHP Syntax :
+
+`PHP code is written inside `<?php ...... ?>` tags.
+
+`Statements end with a semicolon (`;`).
+
+`In PHP, keywords (if, else, while, echo, etc.), classes, functions, and user-defined functions are not case-sensitive.
+
+
+
+# Comments in PHP:
+
+// This is a single-line comment
+
+# This is also a single-line comment (less common)
+
+/* This is a 
+   multi-line comment */
+   
+$x = 5    /* + 15 */    + 5;      //Comments in the Middle of the Code
