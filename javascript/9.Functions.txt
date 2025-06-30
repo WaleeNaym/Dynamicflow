@@ -1,0 +1,314 @@
+### Notes: 
+
+1. A block of code that can be re-used over & over again. 
+2. Function makes the program easier as each small task is divided into a function.
+3. You can use the same code with different arguments, to produce different results.
+
+4. A JavaScript function is executed when "something" invokes it myFunc(); 
+Accessing a function without Parenthesis() returns the function NAME and not the function result.
+
+5. A parameter is the placeholder in function taking the input data. parameters are listed inside the parentheses ().
+   Parameters are temporary variables. Multiple functions can have the SAME named parameter.
+
+6. An Argument is the actual value that is passed to the function.
+
+7. Inside the function, the arguments which have been passed, behave like local variables.
+
+8. Functions often compute a return value. The return value is "returned" back to the "caller"
+
+9. The return statement denotes that the function has ended. Any code after return is not executed.
+   If there is no RETURN value, the function returns UNDEFINED by default. 
+
+
+
+
+
+### Code:
+
+1. Functions declaring & calling:
+
+function demo1(){
+    console.log("Hello Functions!");
+    console.log("Hello Functions Again!");
+}
+
+demo1();          //Calling or Invoking the function
+demo1();
+
+
+
+
+2. Function Parameter & Arguments:
+
+function add(a, b) {
+    console.log(a + b);
+}
+
+add(3,4);
+add(2,9);
+
+
+
+function fruits(apples, oranges){     		//These are parameters or input data
+    console.log(apples, oranges);
+    const total_fruits = apples+oranges;
+    return total_fruits;                 	 //returns this value when function is called
+}
+
+console.log(fruits(35, 15));
+
+const drink = fruits(8, 9);  	 	//Passed arguments & assigned it to variable "drink"
+console.log(drink);         	 	 //Returned value from function is stored in "drink"
+
+
+
+function math01(a, b) {
+    return a + b;
+}
+
+let number1 = Number(prompt("Enter 1st number: "));    		//promt string needs to be converted
+let number2 = Number(prompt("Enter 2nd number: "));
+
+console.log(math01(number1, number2));
+
+
+
+
+2.1.      Functions calling other functions:
+   
+
+const cutToPeices = function (fruit){             //Function Expression
+    return fruit * 4;
+}
+
+const fruitBlender = function (apples, oranges){           //Function Expression
+
+    const applePeices = cutToPeices(apples);         	 //Calling another function & passing Arguments to it
+    const orangePeices = cutToPeices(oranges);       	 //Returned falue is assigned to local variables
+
+    console.log(`Total ${applePeices+orangePeices} Slices of fruit used. \n`);
+
+    const juice = `Juice made with ${apples} peices of apples
+    & ${oranges} peices of oranges`;
+
+    return juice;
+}
+console.log(fruitBlender(2, 3));
+
+
+
+
+2.2   Returns "UNDEFINED" value by Default, if Return value is not defined :
+
+# If you call Function inside console.log & that function has no RETURN, it will print UNDEFINED by to console log.
+
+
+	function poop(p){
+	    console.log("HI");
+	}
+	poop(8);              	 	 //UNDEFINED from function **NOT printed to console log
+	
+	
+	function poop2(p){
+	    console.log("Hello");
+	}
+	console.log(poop2(8));  	  //UNDEFINED from function printed to console log
+
+
+	function poop3(p){
+	    return "Hey There";
+	}
+	console.log(poop3(8));   	 //Since return is defined, no UNDEFINED
+
+
+
+
+3. Function Expressions or Anonymous Function:           (Function without name)
+
+//Function Expression is a way to define functions as Variables or Values.
+
+
+Ex1:	
+	function calcAge1(birthYear) {       	//Standard Declaration
+	    return 2025 - birthYear
+	}
+	console.log(calcAge1(1999));
+	
+	
+	const calcAge2 = function (birthYear) {     	//It's an expression without function name
+	    return 2030 - birthYear;
+	}
+	console.log(calcAge2(1999));       	 //Argument passed to expression
+	
+	
+
+Ex2:
+	let var1 = function (num1) { return num1 ** 3 };          //Expression in 1 line
+	console.log(var1(5));
+	
+	let var2 = var1(3);        		  // can be used as variable value for other variables
+        console.log(var2);
+
+
+
+	let x = function(num){ console.log("Hello"); console.log("Bye!"); return num*3; };      //This also works
+        console.log(x(2));
+
+
+
+
+4. Arrow Function:
+
+
+# Arrow functions allow us to write shorter Anonymous Function syntax.
+# For One line function it automatically returns value & curly brackets can be skipped.
+
+# Syntax:           Variable  =   (Parameters)  =>  some code;                                [can be used without variable names in some cases]
+
+#  this keyword works differently in arrow functions.                 ~~  Research Later ~~
+# Arrow functions do not have the prototype property like " this, arguments, super, new " keywords don't work.
+# Arrow functions cannot be used as constructors.
+
+
+
+Ex:
+
+function calcAge (birthYear){       //Standard Declaration
+    return 2030-birthYear;
+}
+console.log(calcAge(1998));
+
+
+const var1 = birthYear2 => 2030 - birthYear2;   //Parenthesis () & Curly Brackets & Return can be skipped for single lince code
+console.log(var1(1998));
+
+
+
+
+Ex1:       If no parameter is passed:
+
+	const var1 = () => console.log("Hello");    //Blank (), if no parameter is passed
+	var1();
+	
+	const var2 = (name1) => console.log(`Hello ${name1}`);       
+	var2("Walee");
+
+
+Ex2:       Arrow function with One Argument:
+
+	const var1 = birthYear2 => 2030 - birthYear2;   //Parenthesis () can be skipped
+	
+	console.log(var1(1998));
+
+
+Ex2:       Arrow function with Multiple Arguments:
+
+	let varX = (a, b) => a * b;         //Parenthesis () is Required
+	console.log(varX(5, 9));
+	
+	
+
+Ex3:     For Multi Line code inside Function,  Both Curly Brackets & Return keyword must be used:
+
+	const var2 = parameter1 => {
+	    const currentAge = 2030 - parameter1;
+	    const retirement = 65 - currentAge;
+	    return retirement;
+	}
+	console.log(var2(1998));
+	
+
+
+	                                                              // Curly braces are required for multi line code
+	const var3 = (name2, age1) => {console.log(`Hello ${name2}`)
+	                        console.log("You are a nice guy!")
+	                        console.log(`Your only ${age1} years old`)};
+	var3("Walee", 26);
+
+
+
+Ex4:    Arrays with arrow function:
+
+	const numberList = [1,2,3,4,5];
+	const squaredList = numberList.map( (element) => Math.pow(element, 2) );
+	console.log(squaredList);
+
+
+
+Ex4:                    this keyword works differently in arrow functions:
+
+             ~~  Research Later ~~
+
+
+
+
+
+5. Javascript Variable Scopes: 
+
+
+# Scope determines the visibility of variables, objects & functions.
+
+# let & const keyword have Local scope. While var keyword even if declared inside a {block}, it has Global scope.
+
+# Variables created without a declaration keyword (var, let, or const) are always global, even if they are created inside a function.
+
+#  In "Strict Mode", undeclared variables are NOT automatically global.
+
+# Since Local variables are only recognized inside their functions, variables with the same name can be used in different functions. Local variables are created when a function starts, and deleted when the function is completed.
+
+# A variable declared outside a function, becomes GLOBAL. It can be accessed from anywhere.
+
+
+
+Ex1:
+	function math() {
+	    const numb1 = 5;       // Local scope 
+	    console.log(numb1);
+	}
+	math();
+
+	const numb1 = 9;       //Global scope, same name variable can exist outside block
+        console.log(numb1);
+
+
+Ex2:
+	let x = 3;
+	
+	function1();
+	function2();
+	
+	function function1(){
+	    let x = 1;
+	    console.log(x);    //Local X exists & is invoked 1st
+	}
+	
+	function function2(){
+	    console.log(x);    //Global X is invoked
+	}
+
+
+
+6. Nested Functions:
+
+# In JavaScript, a function can have one or more inner functions. These nested functions are in the scope of outer function. Inner function can access variables and parameters of outer function. However, outer function cannot access variables defined inside inner functions.
+
+
+// outer function
+function greet(firstName){
+
+    //inner function
+    function hello(){
+        console.log(`Hi ${firstName}, How are you ?`);
+    }
+     
+    return hello();      //Calling inner function
+}
+
+// Calling outer function
+greet("Nayem");
+
+
+
+
+7. Javascript Closures:
+

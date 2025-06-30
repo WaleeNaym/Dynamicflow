@@ -1,0 +1,358 @@
+### Notes: 
+
+
+
+
+### Code:
+
+
+1. Precedence Order :
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_precedence
+
+Javascript precedence describes the order in which operations are performed. (or simply PEMDAS) 
+
+Ex: print(3*3+3/3-3)    #Importance given from left to right  [ 1st*, 2nd/, 3rd+, 4th- ] 
+
+
+# The order is:
+
+Parentheses () 
+
+Exponent ** 
+
+Unary plus, Unary minus, Bitwise NOT +X, -X, ~X 
+
+Multiplication, Division, Floor division, Modulus, *,  /,  //,  % 
+
+Addition and subtraction +, - 
+
+Bitwise left and right shifts <<,  >> 
+
+Bitwise AND & 
+
+Bitwise XOR ^ 
+
+Bitwise OR | 
+
+Comparisons, Identity, Membership operators ==,  !=,  >,  >=, <,  <=,  is, is not,  in,  not in. 
+
+Logical NOT not  
+
+Logical AND and 
+
+Logical OR or 
+
+
+
+
+2. Arithmetic Operator:
+
+console.log(4-2, 3+5, 9/3, 2*3, 3**2);
+
+
+console.log(9%2, 9%3);                //Remainders
+
+
+# Increment & Decrement:
+
+x++;           // x = x+1
+x--;           // x = x-1
+
+let x = 5;
+console.log(++x);       // x is now 6
+console.log(x++, x++);  // prints 6 and then increased to 7
+
+let y = 6;
+console.log(--y);       // y is now 5
+console.log(y--, y--);  // prints 5 and then decreased to 4
+
+
+
+
+
+3. Assignment Operator:
+
+[ = ]   = Assignment Operator
+[ += ]  = Addition Assignment.
+[ -= ]  = Subtraction Assignment
+[ *= ]  = Multiplication Assignment
+[ /= ]  = Division  Assignment
+[ %= ]  = Remainder Assignment
+[ **= ]  = Exponent Assignment
+
+
+let x;
+x = 10;        //x = 10
+x += 5;        // x = x+5
+x -= 5;        // x = x-1
+x *= 2;        // x = x*2
+x /= 2;        // x = x/2
+x **= 3;        // x = x**3
+
+console.log(x)
+
+
+
+
+
+4. Comparison Operator:
+
+// Comparison operators compare two values and return a boolean value, either true or false.
+// [===] & [!==] should always be used in programming, and not depend on auto data coersion.
+
+	1. [ == ]  = Is Equal To	           
+	2. [ != ]  = Not Equal To
+	3. [ === ]  =  Strict Equal To	             (True, if operands are equal & of same data type)
+	4. [ !== ]  =  Strict Not Equal To      (True, if operands are equal, but different data type. Or Operands are not equal)
+	5. [ > ]  = Greater Than
+	6. [ < ]   = Less Than
+	7. [ >= ]  = Greater Than or Equal To
+	8. [ <= ]  = Less Than or Equal To
+
+
+Ex1:
+	// equal operator
+	console.log(2 == 2); // true
+	console.log(2 == '2'); // true
+	
+	// strict equal operator
+	console.log(2 === 2); // true
+	console.log(2 === '2'); // false
+	
+	// not equal operator  (reverse original boolean output)
+	console.log(3 != 2); // true
+	console.log('hello' != 'Hello'); // true  
+	
+	// strict not equal operator  (reverse original boolean output)
+	console.log(2 !== '2'); // true  
+        console.log(2 !== 2); // false
+
+
+# String Comparison
+
+All the comparison operators above can also be used on strings. Strings are compared alphabetically
+
+Ex1: 
+let text1 = "A";
+let text2 = "B";
+let result = text1 < text2;
+console.log(result);           //true
+
+Ex2:
+let text1 = "20";
+let text2 = "5";
+let result = text1 < text2;
+console.log(result);           //true
+
+
+
+
+
+5. Logical Operator:
+
+// Logical operators perform logical operations and return a boolean value, either true or false.
+
+
+1. &&  =  Logical AND
+2. ||  =  Logical OR
+3.  !  =  Logical NOT
+
+
+// logical AND
+console.log(true && true);    // true
+console.log(true && false);   // false
+
+// logical OR
+console.log(true || true);    // true
+console.log(true || false);   // true
+
+// logical NOT
+console.log(!true);    // false
+console.log(!false);   //true
+
+
+
+
+
+6.   Delete keyword:
+
+ The delete operator deletes a property from an object
+ The delete operator should not be used on predefined built-in JavaScript object properties. It can crash your application.
+ It works for both properties owned by the object and those inherited from prototypes
+
+ Returns TRUE when you delete a property. Returns FALSE if you delete variables or functions.
+
+
+Ex1:
+
+const information = {            
+    firstName: "Abu",             
+    lastName: "Naym",             
+    age: 2030 - 1999,
+    job: "Junior Developer",
+    hobbies: [ "Driving", "Touring", "WorkOut"]
+};
+
+delete information.lastName   //delete object properties only
+
+//Should not be used on index array element, leaves EMPTY item
+delete information.hobbies[0]  
+
+const var1 = delete information.job    //Returns True for both "deleted or Not deleted"
+console.log(var1);
+
+console.log( information );
+
+
+
+Ex2:                    Should not be used on Array elements, Functions, Variables
+
+const array1 = ["poop", 10, 25, 36, 49, 78];
+delete array1[2]
+console.log(array1);
+
+// The deleted element is replaced with an empty slot, represented by the string 'empty'.
+// The array still retains its original length but has an empty slot at index 2.
+
+
+
+
+
+
+7.  i++ vs ++i   or  i-- vs --i       Pre & Post Increment/Decrement Differences:
+
+1) Post-Increment (i++):  we use i++ in our statement if we want to use the current value, and then we want to increment the value of i by 1.
+
+2) Pre-Increment(++i):  We use ++i in our statement if we want to increment the value of i by 1 and then use it in our statement.
+
+3) Same for decrements. ( i-- vs --i )
+
+
+Ex1:
+	//i original value 5 assigned to var1, then increment implemented & i updated 6
+	let i = 5;
+	let var1 = i++;   
+	
+	//increment implemented j updated to 6, then that value assigned to var2
+	let j = 5;
+	let var2 = ++j;   
+	
+	console.log(i);
+	console.log(var1);
+	console.log(j);
+	console.log(var2);
+
+Ex2:
+	//i original value 5 assigned to var1, then decrement implemented & i updated 4
+	let i = 5;
+	let var1 = i--;   
+	
+	//decrement implemented j updated to 4, then that value assigned to var2
+	let j = 5;
+	let var2 = --j;   
+	
+	console.log(i);
+	console.log(var1);
+	console.log(j);
+	console.log(var2);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
